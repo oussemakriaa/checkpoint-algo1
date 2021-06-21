@@ -1,0 +1,24 @@
+ALGORITHM algorithm_name
+VAR
+sent : STRING ;
+nb_c,nb_w,nb_v,i:INTEGER:=0;
+
+BEGIN
+REPEAT
+read(sent);
+UNTIL (sent[length(sent)-1]=='.')
+nb_c:=length(sent)-1;
+FOR i FROM 0 TO length(sent)-1 STEP 1  DO
+    IF (sent[i]==" ") THEN
+        nb_c:=bn_c - 1;
+        nb_w:=nb_w + 1;
+    END_IF
+    IF (sent[i]=="a" OR sent[i]=="e" OR sent[i]=="y" OR sent[i]=="u" OR sent[i]=="i" OR sent[i]=="o" OR sent[i]=="A" ORsent[i]=="E" OR sent[i]=="Y" OR sent[i]=="U" OR sent[i]=="I" OR sent[i]=="O") THEN
+        nb_v:=nb_v + 1;
+    END_IF
+
+END_FOR
+write("number of characters"+ nb_c);
+write("number of words"+ nb_w);
+write("number of vowels"+ nb_v);
+END
