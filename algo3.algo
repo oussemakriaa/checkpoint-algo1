@@ -1,0 +1,36 @@
+PROCEDURE Dotproduct(v1,v2 :Array_of_INTEGER, Var Dot : INTEGER)
+VAR
+    i:INTEGER;
+BEGIN
+    Dot := 0 ;
+    IF (v1.length <> v2.length) THEN
+        write( "please provide equal length for both arrays");
+   else {
+       FOR i FROM 0 TO v1.length-1 STEP 1  DO
+           Dot := Dot + v1[i]*v2[i];
+       END_FOR
+       write(Dot)
+   }
+    END_IF
+
+END
+ALGORITHM scalar
+VAR
+    lv1:Array_of_Arrays
+    lv2:Array_of_Arrays
+    scalar,i,j: INTEGER
+    
+BEGIN
+    FOR i FROM 0 TO lv1.length-1 STEP 1  DO
+        FOR j FROM 0 TO lv2.length-1 STEP 1  DO
+            Dotproduct(lv1[i],lv2[j], scalar)
+           IF (scalar = 0) THEN
+            write(lv1[i],lv2[j],"sont ortoghonales")
+           ELSE 
+           write(lv1[i],lv2[j],"ne sont pas ortoghonales")
+    END_IF
+        END_FOR
+    END_FOR
+    
+
+END
