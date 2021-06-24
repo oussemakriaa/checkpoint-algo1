@@ -1,23 +1,26 @@
-ALGORITHM selection
+ALGORITHM insertion
 VAR
-arr : ARRAY_OF INTEGER[100];
-i,j:INTEGER;
+    n:INTEGER.
+    array tab[n];
 BEGIN
-FOR i FROM 0 TO arr.length-1 STEP 1  DO
-    j:=i;
-    WHILE(j>0 AND arr[j]<arr[j-1])) DO
-    permit(arr[j],arr[j-1]);
-        set_instructions
-    END_WHILE
-END_FOR
-    set_instructions
-END
+    PROCEDURE ISort(array arr[],INTEGER n)
+    VAR
+        INTEGER i, key, j;
+    BEGIN
+        FOR i FROM 1 TO n-1 STEP step  DO
+             key = arr[i];
+            j = i - 1;
+        END_FOR
 
-PROCEDURE permit(var a,b :INTEGER)
-VAR
-temp:INTEGER;
-BEGIN
-        temp:=a;
-        a:=b;
-        b:=temp;
+        WHILE (j >= 0 && arr[j] > key) DO
+               arr[j + 1] = arr[j];
+            j = j - 1;
+        END_WHILE
+        arr[j + 1] = key;
+    END
+
+    read(n);
+
+     ISort(tab,n);
+     write("sorted tab"+tab);
 END
